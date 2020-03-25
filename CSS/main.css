@@ -1,0 +1,318 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+.grid { /*for mobile screens */
+	display: grid;
+	grid-template-columns: 30% 69%;
+	grid-gap:5px;
+	grid-template-areas: 
+	"title title"
+	"header header"
+	"sidebar sidebar"
+	"content content"
+	"footer footer";
+/*	padding-top:5px;	*/
+/*	padding-bottom:5px;	*/
+}
+
+.title {
+	grid-area: title;
+	background-color: rgba(255, 83, 66, 1);
+/*	background-image: url("https://res.cloudinary.com/dxpnhlqy5/image/upload/v1578171419/Website%20Media/3nPw4Npc_te7x2s.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;	*/
+	padding-left:20%;
+	padding-right:20%;
+/*	border-radius:15px;	*/
+	color: white;
+	font-family:'Oswald', sans-serif;
+}
+
+.header {
+	grid-area: header;
+/*	background-color: rgba(0, 0, 40, 0.6); 	*/
+	padding-top:10px;
+	padding-bottom: 20px;
+	padding-left:20px;
+	padding-right:20px;
+    font-family:'Open Sans', sans-serif;
+}
+
+.sidebar {
+	grid-area: sidebar;
+	background-color: rgba(255, 255, 255, 0);
+/*	border-right: 3px solid rgba(255, 83, 66, 1);	*/
+	padding-top:10px;
+	padding-right: 2em;
+	white-space: nowrap;
+/*	border-radius:15px;	*/
+	font-family:'Oswald', sans-serif;
+	font-size: 20px;
+}
+
+#hamburger {
+	background-color: transparent;
+	padding:10px;
+	font-size: 20px;
+	border-radius: 10px;
+	color: rgba(255, 83, 66, 1);
+	width: 12rem;
+	border: none;
+	outline:none;
+	font-family:'Oswald', sans-serif;
+	margin:auto;
+	display:block;
+}
+
+#hamburger:hover {
+	background-color: rgba(255, 83, 66, 1);
+	color: white;
+	text-shadow: 5px;
+}
+
+#hamburger:visited {
+	background-color: transparent;
+	border: none;
+}
+
+.content {
+	border-radius:15px;
+	grid-area: content;
+/*	background-color: rgba(127, 127, 127, 0.6);	*/
+	padding:5px;	
+	padding-top: 20px;
+	padding-bottom: 20px;
+/*	grid within the content: */
+	display: grid;
+	grid-template-columns: 100%;
+
+	grid-gap: 10px;
+	grid-template-areas: 
+	"contentheader"
+	"latestblog"
+	"poetry"
+	"microstories"
+	"otherstuff";
+	font-family:'Open Sans', sans-serif;
+}
+
+.footer {
+	grid-area: footer;
+	grid-column-start: 2-4;
+	text-align:center;
+	background-color: rgba(255, 83, 66, 1);
+	padding:5px;
+	color: white;
+}
+
+
+@media screen and (min-width: 750px)
+{
+	/* insert desktop grid code here */
+.grid { /*for mobile screens */
+	display: grid;
+	grid-template-columns: 10px 200px 1fr 10px;
+	grid-gap: 5px;
+	grid-template-areas: 
+	"title title title title"
+	". header header ." 
+	". sidebar content ."
+	"footer footer footer footer";
+}
+}
+
+@media screen and (max-width: 750px) {
+	.title{ 
+		padding-left: 5%;
+ 	}
+ 	.header{ 
+ 		padding-left: 5%; 
+ 	}
+ 	#hamburger{
+ 		margin:auto;
+ 		display:block;
+ 	}
+ 	.sidebar {
+    	border-right: none;
+     	padding-top: 10px;
+    	padding-bottom: 10px;
+    	line-height: 20px;
+    	white-space: nowrap;
+    	margin:auto;
+    	display: block;
+    	text-align: center;
+  }
+	.content img {
+		max-width: 100%;
+  }
+  	.content {
+  		padding-left: 5%;
+  		padding-right: 5%;
+  	}
+}
+
+
+body {
+	background: #e2dcba;
+	background-image: url("https://res.cloudinary.com/dxpnhlqy5/image/upload/v1578173613/Website%20Media/lighter_paper_qbvgcl.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Oswald', sans-serif;
+}
+
+ul#footer-content li {
+	list-style-position: inside;
+	list-style-type:none;
+	display:inline;
+	padding-left:5%;
+	padding-right:5%;
+}
+
+
+ul#sidebar-content li {
+	list-style-position: inside;
+	list-style-type:none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 1em;
+	width: 12rem;
+	margin:auto;
+	display:block;
+	text-align:center;
+}
+
+
+.contentheader {
+	grid-area:contentheader;
+	padding-bottom:10px;
+}
+
+#date_time{
+	padding-bottom:10px;
+	font-style:italic;
+}
+
+.latestblog {
+	grid-area:latestblog;
+	text-decoration:none;
+}
+
+.latestblog div:hover {
+	box-shadow:5px 10px 10px grey;
+	content: "stuff";
+}
+
+
+h4.feed-item-title {
+/*    background-color: green;  */
+    font-family:inherit;
+    color:black;
+}
+
+.feed-item-title a:link{
+color: black;
+}
+
+p.feed-item-desc {
+/*    background-color: pink;   */
+    font-family:inherit;
+    color:black;
+    padding: 50px;
+}
+
+#wpfeed{
+    padding-top: 20px;
+    width:100%;
+}
+
+#blog {
+	padding:10px;
+	border: 1px solid rgba(120,120,120,0.5);
+	border-radius:15px;
+}
+
+.poetry {
+	grid-area:poetry;
+	padding-bottom:10px;
+}
+
+
+#poems {
+	padding:10px;
+	border: 1px solid rgba(120,120,120,0.5);
+	border-radius:15px;
+}
+
+.poetry div:hover {
+	box-shadow:5px 10px 10px grey;
+}
+
+.microstories {
+	grid-area:microstories;
+	padding-bottom:10px;
+}
+
+#microstories {
+	padding:10px;
+	border: 1px solid rgba(120,120,120,0.5);
+	border-radius:15px;
+}
+
+.microstories div:hover {
+	box-shadow:5px 10px 10px grey;
+}
+
+.otherstuff {
+	grid-area:otherstuff;
+}
+
+#otherstuff {
+	padding:10px;
+	border: 1px solid rgba(120,120,120,0.5);
+	border-radius:15px;
+}
+
+.otherstuff div:hover {
+	box-shadow:5px 10px 10px grey;
+}
+
+
+img {
+	max-width: 100%;
+	align-self:center;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+.footer a:link {
+	color: white;
+}
+
+.footer a:visited{
+	color: #81312F;
+}
+
+.footer a:hover {
+	color: #A88B80;
+}
+
+.sidebar a:link {
+	color: rgba(255, 83, 66, 1);
+}
+
+.sidebar a:visited{
+	color: #81312F;
+}
+
+.sidebar a:hover {
+	color: #A88B80;
+}
+
+h2 {
+	padding-bottom: 10px;
+}
