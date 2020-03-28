@@ -32,7 +32,7 @@
 }
 
 .header {
-/*	grid-area: header;		*/
+	grid-area: header;		
 /*	background-color: rgba(0, 0, 40, 0.6); 	*/
 	padding-top:10px;
 	padding-bottom: 20px;
@@ -159,9 +159,19 @@
 }
 
 
+.contentbody{ 
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap:10px;
+	grid-template-areas: 
+	"latestblog latestblog latestblog"
+	"poetry microstories otherstuff"
+}
+
+
 body {
-	background: #e2dcba;
-	background-image: url("https://res.cloudinary.com/dxpnhlqy5/image/upload/v1578173613/Website%20Media/lighter_paper_qbvgcl.jpg");
+/*	background: #e2dcba;		*/
+/*	background-image: url("https://res.cloudinary.com/dxpnhlqy5/image/upload/v1578173613/Website%20Media/lighter_paper_qbvgcl.jpg");	*/
 	background-size: cover;
 	background-repeat: no-repeat;
 	font-family: 'Oswald', sans-serif;
@@ -194,43 +204,35 @@ ul#sidebar-content li {
 	padding-bottom:10px;
 }
 
-#date_time{
-	padding-bottom:10px;
-	font-style:italic;
-}
 
 .latestblog {
 	grid-area:latestblog;
 	text-decoration:none;
+	padding-bottom:10px;
+	border: 1px solid rgba(120,120,120,0.5);
+	border-radius: 15px;
 }
-
-/*
-.latestblog div:hover {
-	box-shadow:5px 10px 10px grey;
-	content: "stuff";
-}
-*/
 
 
 h4.feed-item-title {
 /*    background-color: green;  */
     font-family:inherit;
-    color:black;
+    color:rgba(120,120,120,1);
 }
 
 .feed-item-title a:link{
-color: black;
+    color:rgba(120,120,120,1);
 }
 
 p.feed-item-desc {
 /*    background-color: pink;   */
     font-family:inherit;
-    color:black;
+    color:rgba(120,120,120,1);
     padding: 50px;
 }
 
 div .latestblog a:link {
-	color:black;
+    color:rgba(120,120,120,1);
 }
 
 
@@ -247,55 +249,32 @@ div .latestblog a:link {
 
 .poetry {
 	grid-area:poetry;
-	padding-bottom:10px;
-}
-
-
-#poems {
 	padding:10px;
 	border: 1px solid rgba(120,120,120,0.5);
-	border-radius:15px;
+	border-radius: 15px;
 }
-
-#poems div:hover{
-	box-shadow:5px 10px 10px grey;
-}
-
 
 
 .microstories {
 	grid-area:microstories;
-	padding-bottom:10px;
-}
-
-#microstories {
 	padding:10px;
-	border: 1px solid rgba(120,120,120,0.5);
+	border: 1px solid rgba(120,120,120,0.5);	
 	border-radius:15px;
 }
 
-#microstories div:hover {
-	box-shadow:5px 10px 10px grey;
-}
-
-.microstories a:hover {
-	box-shadow:0px 0px 0px grey;
-}
 
 .otherstuff {
-	grid-area:otherstuff;
-}
-
-#otherstuff {
 	padding:10px;
-	border: 1px solid rgba(120,120,120,0.5);
+	border: 1px solid rgba(120,120,120,0.5);	
 	border-radius:15px;
 }
 
-.otherstuff div:hover {
-	box-shadow:5px 10px 10px grey;
+.sectionimg {
+	width:100px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
-
 
 img {
 	max-width: 100%;
@@ -330,6 +309,6 @@ a:link {
 	color: #A88B80;
 }
 
-h2 {
+.heading_text {
 	padding-bottom: 10px;
 }
