@@ -10,10 +10,10 @@
 	grid-gap:5px;
 	grid-template-areas: 
 	"title title"
-	"header header"
+/*	"header header"		*/
 	"sidebar sidebar"
 	"content content"
-	"footer footer";
+/*	"footer footer";		*/
 /*	padding-top:5px;	*/
 /*	padding-bottom:5px;	*/
 }
@@ -32,13 +32,15 @@
 }
 
 .header {
-	grid-area: header;
+/*	grid-area: header;		*/
 /*	background-color: rgba(0, 0, 40, 0.6); 	*/
 	padding-top:10px;
 	padding-bottom: 20px;
 	padding-left:20px;
 	padding-right:20px;
-    font-family:'Open Sans', sans-serif;
+	font-family:'Open Sans', sans-serif;
+	width:100%;
+	position:absolute;
 }
 
 .sidebar {
@@ -100,12 +102,14 @@
 }
 
 .footer {
-	grid-area: footer;
-	grid-column-start: 2-4;
 	text-align:center;
 	background-color: rgba(255, 83, 66, 1);
 	padding:5px;
 	color: white;
+	position:fixed;
+	bottom:0px;
+	left: 0px;
+	width:100%;
 }
 
 
@@ -200,10 +204,12 @@ ul#sidebar-content li {
 	text-decoration:none;
 }
 
+/*
 .latestblog div:hover {
 	box-shadow:5px 10px 10px grey;
 	content: "stuff";
 }
+*/
 
 
 h4.feed-item-title {
@@ -223,6 +229,11 @@ p.feed-item-desc {
     padding: 50px;
 }
 
+div .latestblog a:link {
+	color:black;
+}
+
+
 #wpfeed{
     padding-top: 20px;
     width:100%;
@@ -230,8 +241,8 @@ p.feed-item-desc {
 
 #blog {
 	padding:10px;
-	border: 1px solid rgba(120,120,120,0.5);
-	border-radius:15px;
+/*	border: 1px solid rgba(120,120,120,0.5);
+	border-radius:15px;		*/
 }
 
 .poetry {
@@ -246,9 +257,11 @@ p.feed-item-desc {
 	border-radius:15px;
 }
 
-.poetry div:hover {
+#poems div:hover{
 	box-shadow:5px 10px 10px grey;
 }
+
+
 
 .microstories {
 	grid-area:microstories;
@@ -261,8 +274,12 @@ p.feed-item-desc {
 	border-radius:15px;
 }
 
-.microstories div:hover {
+#microstories div:hover {
 	box-shadow:5px 10px 10px grey;
+}
+
+.microstories a:hover {
+	box-shadow:0px 0px 0px grey;
 }
 
 .otherstuff {
