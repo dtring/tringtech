@@ -43,6 +43,10 @@
 	position:absolute;
 }
 
+h1 {
+	font-family:'Oswald', sans-serif;
+}
+
 .sidebar {
 	grid-area: sidebar;
 	background-color: rgba(255, 255, 255, 0);
@@ -211,6 +215,7 @@ ul#sidebar-content li {
 	padding-bottom:10px;
 	border: 1px solid rgba(120,120,120,0.5);
 	border-radius: 15px;
+	color: rgba(120,120,120,1);
 }
 
 
@@ -232,7 +237,7 @@ p.feed-item-desc {
 }
 
 div .latestblog a:link {
-    color:rgba(120,120,120,1);
+	color: rgba(120,120,120,0.5);
 }
 
 
@@ -279,6 +284,15 @@ div .latestblog a:link {
 img {
 	max-width: 100%;
 	align-self:center;
+}
+
+
+.contentbody a:link{
+	color: rgba(120,120,120,0.5);
+}
+
+.latestblog a:link{
+	color: rgba(120,120,120,0.5);
 }
 
 a:link {
