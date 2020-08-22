@@ -6,13 +6,13 @@
 
 .grid { /*for mobile screens */
 	display: grid;
-	grid-template-columns: 30% 69%;
+	grid-template-columns: auto;
 	grid-gap:5px;
 	grid-template-areas: 
-	"title title"
+	"title"
 /*	"header header"		*/
-	"sidebar sidebar"
-	"content content"
+	"sidebar"
+	"content"
 /*	"footer footer";		*/
 /*	padding-top:5px;	*/
 /*	padding-bottom:5px;	*/
@@ -20,13 +20,7 @@
 
 .title {
 	grid-area: title;
-	background-color: rgba(255, 83, 66, 1);
-/*	background-image: url("https://res.cloudinary.com/dxpnhlqy5/image/upload/v1578171419/Website%20Media/3nPw4Npc_te7x2s.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;	*/
-	padding-left:20%;
-	padding-right:20%;
-/*	border-radius:15px;	*/
+	background-color: rgba(64, 224, 208, 1);
 	color: white;
 	font-family:'Oswald', sans-serif;
 }
@@ -45,6 +39,7 @@
 
 h1 {
 	font-family:'Oswald', sans-serif;
+	padding-bottom: 0px;
 }
 
 .sidebar {
@@ -57,31 +52,7 @@ h1 {
 /*	border-radius:15px;	*/
 	font-family:'Oswald', sans-serif;
 	font-size: 20px;
-}
-
-#hamburger {
-	background-color: transparent;
-	padding:10px;
-	font-size: 20px;
-	border-radius: 10px;
-	color: rgba(255, 83, 66, 1);
-	width: 12rem;
-	border: none;
-	outline:none;
-	font-family:'Oswald', sans-serif;
-	margin:auto;
-	display:block;
-}
-
-#hamburger:hover {
-	background-color: rgba(255, 83, 66, 1);
-	color: white;
-	text-shadow: 5px;
-}
-
-#hamburger:visited {
-	background-color: transparent;
-	border: none;
+	color: rgba(64, 224, 208, 1);
 }
 
 .content {
@@ -98,16 +69,17 @@ h1 {
 	grid-gap: 10px;
 	grid-template-areas: 
 	"contentheader"
-	"latestblog"
-	"poetry"
-	"microstories"
-	"otherstuff";
+	"services"
+	"about"
+	"booking"
+	"contact";
 	font-family:'Open Sans', sans-serif;
+	color: #A88B80;
 }
 
 .footer {
 	text-align:center;
-	background-color: rgba(255, 83, 66, 1);
+	background-color: rgba(64, 224, 208, 1);
 	padding:5px;
 	color: white;
 	position:fixed;
@@ -120,38 +92,53 @@ h1 {
 @media screen and (min-width: 750px)
 {
 	/* insert desktop grid code here */
-.grid { /*for mobile screens */
+.grid {
 	display: grid;
-	grid-template-columns: 10px 200px 1fr 10px;
+	grid-template-columns: auto auto;
 	grid-gap: 5px;
 	grid-template-areas: 
-	"title title title title"
-	". header header ." 
-	". sidebar content ."
-	"footer footer footer footer";
+	"title title"
+	"header header" 
+   "sidebar sidebar"
+	"content content"
+	"footer footer";
+}
+  .sidebar {
+    border-bottom-style: solid;
+    border-width: 5px;
+    border-color: rgba(64, 224, 208,0.5);
+	padding-bottom: 20px;
+	white-space: nowrap;
+  }
+  
+  ul#sidebar-content li {
+	list-style-type:none;
+	padding: 0px;
+	width: 12rem;
+	margin:auto;
+	display:block;
+	float:right;
+  	text-align: right;
+	 white-space: nowrap;
 }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 750px) { /*mobile screens */
 	.title{ 
 		padding-left: 5%;
  	}
  	.header{ 
  		padding-left: 5%; 
  	}
- 	#hamburger{
- 		margin:auto;
- 		display:block;
- 	}
  	.sidebar {
-    	border-right: none;
-     	padding-top: 10px;
-    	padding-bottom: 10px;
+		border-bottom-style: solid;
+		border-width: 5px;
+		border-color: rgba(64, 224, 208,0.5);
+		padding-bottom: 20px;
     	line-height: 20px;
-    	white-space: nowrap;
-    	margin:auto;
     	display: block;
-    	text-align: center;
+		text-align: right;
+		white-space: nowrap;
   }
 	.content img {
 		max-width: 100%;
@@ -159,23 +146,98 @@ h1 {
   	.content {
   		padding-left: 5%;
   		padding-right: 5%;
-  	}
+	  }
+
+	  ul#sidebar-content li {
+		list-style-type:none;
+		padding: 5px;
+		margin:auto;
+		display:block;
+		  text-align: right;
+		 white-space: nowrap;
+	}
+
+	.sectionimg {
+		width: 150px !important;
+		vertical-align:middle;
+	}
+
+	.services {
+		grid-area:services;
+		padding:10px;
+	/*	border: 1px solid rgba(120,120,120,0.5);
+		border-radius: 15px;	*/
+	}
+	
+	.about {
+		grid-area:about;
+		padding:10px;
+	/*	border: 1px solid rgba(120,120,120,0.5);
+		border-radius: 15px;	*/
+	}
+	
+	
+	.booking {
+		grid-area:booking;
+		padding:10px;
+	/*	border: 1px solid rgba(120,120,120,0.5);	
+		border-radius:15px;	*/
+	}
+	
+	
+	.contact {
+		grid-area: contact;
+		padding:10px;
+	/*	border: 1px solid rgba(120,120,120,0.5);	
+		border-radius:15px;	*/
+	}
+	
 }
 
 
 .contentbody{ 
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: auto;
 	grid-gap:10px;
 	grid-template-areas: 
-	"latestblog latestblog latestblog"
-	"poetry microstories otherstuff"
+	"services"
+	"about"
+	"booking"
+	"contact"
 }
 
+.heading_text {
+	padding-bottom: 10px;
+	grid-area: heading_text;
+}
+
+.sect1{
+	grid-area: sect1;
+}
+
+.sect2{
+	grid-area: sect2;
+}
+
+.homesection {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 10px;
+	grid-template-areas:
+	"sect1 heading_text"
+	"sect1 sect2"
+}
+
+.homesection_right {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 10px;
+	grid-template-areas:
+	"heading_text sect1"
+	"sect2 sect1"
+}
 
 body {
-/*	background: #e2dcba;		*/
-/*	background-image: url("https://res.cloudinary.com/dxpnhlqy5/image/upload/v1578173613/Website%20Media/lighter_paper_qbvgcl.jpg");	*/
 	background-size: cover;
 	background-repeat: no-repeat;
 	font-family: 'Oswald', sans-serif;
@@ -190,18 +252,6 @@ ul#footer-content li {
 }
 
 
-ul#sidebar-content li {
-	list-style-position: inside;
-	list-style-type:none;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-right: 1em;
-	width: 12rem;
-	margin:auto;
-	display:block;
-	text-align:center;
-}
-
 
 .contentheader {
 	grid-area:contentheader;
@@ -209,81 +259,46 @@ ul#sidebar-content li {
 }
 
 
-.latestblog {
-	grid-area:latestblog;
-	text-decoration:none;
-	padding-bottom:10px;
-	border: 1px solid rgba(120,120,120,0.5);
-	border-radius: 15px;
-	color: rgba(120,120,120,1);
-}
 
 
-h4.feed-item-title {
-/*    background-color: green;  */
-    font-family:inherit;
-    color:rgba(120,120,120,1);
-}
-
-.feed-item-title a:link{
-    color:rgba(120,120,120,1);
-}
-
-p.feed-item-desc {
-/*    background-color: pink;   */
-    font-family:inherit;
-    color:rgba(120,120,120,1);
-    padding: 50px;
-}
-
-div .latestblog a:link {
-	color: rgba(120,120,120,0.5);
-}
-
-
-#wpfeed{
-    padding-top: 20px;
-    width:100%;
-}
-
-#blog {
-	padding:10px;
+.services {
+	grid-area:services;
 /*	border: 1px solid rgba(120,120,120,0.5);
-	border-radius:15px;		*/
+	border-radius: 15px;	*/
+	padding: 60px;
 }
 
-.poetry {
-	grid-area:poetry;
-	padding:10px;
-	border: 1px solid rgba(120,120,120,0.5);
-	border-radius: 15px;
-}
-
-
-.microstories {
-	grid-area:microstories;
-	padding:10px;
-	border: 1px solid rgba(120,120,120,0.5);	
-	border-radius:15px;
+.about {
+	grid-area:about;
+/*	border: 1px solid rgba(120,120,120,0.5);
+	border-radius: 15px;	*/
+	padding: 60px;
 }
 
 
-.otherstuff {
-	padding:10px;
-	border: 1px solid rgba(120,120,120,0.5);	
-	border-radius:15px;
+
+.booking {
+	grid-area:booking;
+/*	border: 1px solid rgba(120,120,120,0.5);	
+	border-radius:15px;	*/
+	padding: 60px;
+}
+
+
+.contact {
+
+/*	border: 1px solid rgba(120,120,120,0.5);	
+	border-radius:15px;	*/
+	padding: 60px;
 }
 
 .sectionimg {
-	width:100px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	width:250px;
+	vertical-align:middle;
 }
 
 img {
 	max-width: 100%;
-	align-self:center;
 }
 
 
@@ -291,12 +306,13 @@ img {
 	color: rgba(120,120,120,0.5);
 }
 
-.latestblog a:link{
+.services a:link{
 	color: rgba(120,120,120,0.5);
 }
 
 a:link {
 	text-decoration: none;
+	color: #00CED1;
 }
 
 .footer a:link {
@@ -304,25 +320,22 @@ a:link {
 }
 
 .footer a:visited{
-	color: #81312F;
+	color: white;
 }
 
 .footer a:hover {
 	color: #A88B80;
 }
 
-.sidebar a:link {
-	color: rgba(255, 83, 66, 1);
+.a:link {
+	color: rgba(64, 224, 208, 1);
 }
 
 .sidebar a:visited{
-	color: #81312F;
+	color: #00CED1;
 }
 
 .sidebar a:hover {
 	color: #A88B80;
 }
 
-.heading_text {
-	padding-bottom: 10px;
-}
