@@ -69,10 +69,10 @@ h1 {
 	grid-gap: 10px;
 	grid-template-areas: 
 	"contentheader"
-	"services"
 	"about"
-	"booking"
-	"contact";
+	"services"
+	"contact"
+	"booking";
 	font-family:'Open Sans', sans-serif;
 	color: #A88B80;
 }
@@ -200,10 +200,10 @@ h1 {
 	grid-template-columns: auto;
 	grid-gap:10px;
 	grid-template-areas: 
-	"services"
 	"about"
-	"booking"
+	"services"
 	"contact"
+	"booking";
 }
 
 .heading_text {
@@ -225,7 +225,7 @@ h1 {
 	grid-gap: 10px;
 	grid-template-areas:
 	"sect1 heading_text"
-	"sect1 sect2"
+	"sect1 sect2";
 }
 
 .homesection_right {
@@ -234,7 +234,7 @@ h1 {
 	grid-gap: 10px;
 	grid-template-areas:
 	"heading_text sect1"
-	"sect2 sect1"
+	"sect2 sect1";
 }
 
 body {
@@ -286,7 +286,7 @@ ul#footer-content li {
 
 
 .contact {
-
+	grid-area:contact;
 /*	border: 1px solid rgba(120,120,120,0.5);	
 	border-radius:15px;	*/
 	padding: 60px;
